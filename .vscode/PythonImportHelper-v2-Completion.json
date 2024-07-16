@@ -1,0 +1,113 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Book",
+        "importPath": "book",
+        "description": "book",
+        "isExtraImport": true,
+        "detail": "book",
+        "documentation": {}
+    },
+    {
+        "label": "Book",
+        "importPath": "book",
+        "description": "book",
+        "isExtraImport": true,
+        "detail": "book",
+        "documentation": {}
+    },
+    {
+        "label": "Library",
+        "importPath": "library",
+        "description": "library",
+        "isExtraImport": true,
+        "detail": "library",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "user",
+        "description": "user",
+        "isExtraImport": true,
+        "detail": "user",
+        "documentation": {}
+    },
+    {
+        "label": "get_float_input",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_int_input",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "Book",
+        "kind": 6,
+        "importPath": "book",
+        "description": "book",
+        "peekOfCode": "class Book:\n    def __init__(self, title, authors, isbn, year, price, quantity):\n        self.title = title\n        self.authors = authors\n        self.isbn = isbn\n        self.year = year\n        self.price = price\n        self.quantity = quantity\n    def __str__(self):\n        return f\"Title: {self.title}, Authors: {', '.join(self.authors)}, ISBN: {self.isbn}, Year: {self.year}, Price: {self.price}, Quantity: {self.quantity}\"",
+        "detail": "book",
+        "documentation": {}
+    },
+    {
+        "label": "Library",
+        "kind": 6,
+        "importPath": "library",
+        "description": "library",
+        "peekOfCode": "class Library:\n    def __init__(self, filename='library.json'):\n        self.filename = filename\n        self.books = []\n        self.lent_books = []\n    def load_books(self):\n        try:\n            with open(self.filename, 'r') as file:\n                data = json.load(file)\n                self.books = [Book(**book) for book in data['books']]",
+        "detail": "library",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    library = Library()\n    library.load_books()\n    while True:\n        print(\"\\nLibrary Management System\")\n        print(\"1. Add Book\")\n        print(\"2. View All Books\")\n        print(\"3. Search Books\")\n        print(\"4. Search Books by Author\")\n        print(\"5. Remove Book\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "user",
+        "description": "user",
+        "peekOfCode": "class User:\n    def __init__(self, name):\n        self.name = name\n    def __str__(self):\n        return self.name",
+        "detail": "user",
+        "documentation": {}
+    },
+    {
+        "label": "get_float_input",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def get_float_input(prompt):\n    while True:\n        try:\n            return float(input(prompt))\n        except ValueError:\n            print(\"Please enter a valid floating number.\")\ndef get_int_input(prompt):\n    while True:\n        try:\n            return int(input(prompt))",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_int_input",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def get_int_input(prompt):\n    while True:\n        try:\n            return int(input(prompt))\n        except ValueError:\n            print(\"Please enter a valid integer.\")",
+        "detail": "utils",
+        "documentation": {}
+    }
+]
